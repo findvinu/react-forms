@@ -79,10 +79,11 @@ button:active {
   border-color: #33059e;
 }
 
-.form-actions {
-  text-align: right;
+.form-actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
-
 .form-actions button {
   margin-left: 1rem;
 }
