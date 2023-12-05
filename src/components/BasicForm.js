@@ -1,7 +1,8 @@
 import useInput from "../hooks/useInput";
+// import useInput from "../hooks/useInputReducer";
 
-const isInputValid = (value) => value.trim() !== "";
-const isEmailValid = (value) => value.includes("@");
+const isNotEmpty = (value) => value.trim() !== "";
+const isEmail = (value) => value.includes("@");
 
 const BasicForm = (props) => {
   const {
@@ -11,7 +12,7 @@ const BasicForm = (props) => {
     inputBlurHandler: firstNameBlurHandler,
     hasError: firstNameHasError,
     reset: resetFirstName,
-  } = useInput(isInputValid);
+  } = useInput(isNotEmpty);
   const {
     value: lastNameValue,
     isValid: lastNameValid,
@@ -19,7 +20,7 @@ const BasicForm = (props) => {
     inputBlurHandler: lastNameBlurHandler,
     hasError: lastNameHasError,
     reset: resetLastName,
-  } = useInput(isInputValid);
+  } = useInput(isNotEmpty);
   const {
     value: emailValue,
     isValid: emailValid,
@@ -27,7 +28,7 @@ const BasicForm = (props) => {
     inputBlurHandler: emailBlurHandler,
     hasError: emailHasError,
     reset: resetEmail,
-  } = useInput(isEmailValid);
+  } = useInput(isEmail);
 
   let formIsValid = false;
 
